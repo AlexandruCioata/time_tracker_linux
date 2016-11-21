@@ -1,1 +1,0 @@
-for /f "tokens=1" %%i in ('jps -l ^| find "%1"') do ( taskkill /F /PID %%i )
