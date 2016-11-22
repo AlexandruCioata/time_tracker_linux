@@ -6,12 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfd255ee-8181-4006-8ea9-47014b8f0979" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/accessed_apps.txt" afterPath="$PROJECT_DIR$/cache/accessed_apps.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appConfig.properties" afterPath="$PROJECT_DIR$/appConfig.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/log4j-application.log" afterPath="$PROJECT_DIR$/cache/log4j-application.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/user_interaction.txt" afterPath="$PROJECT_DIR$/cache/user_interaction.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="bfd255ee-8181-4006-8ea9-47014b8f0979" name="Default" comment="Integrating initial new version&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="time_tracker.iws" />
@@ -115,7 +110,7 @@
       <file leaf-file-name="appConfig.properties" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/appConfig.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="68" selection-start="513" selection-end="513" vertical-scroll-proportion="0.28954422" vertical-offset="0" max-vertical-offset="1440">
+            <state line="17" column="80" selection-start="683" selection-end="683" vertical-scroll-proportion="0.41018766" vertical-offset="0" max-vertical-offset="1440">
               <folding />
             </state>
           </provider>
@@ -526,6 +521,11 @@
       <created>1479729197974</created>
       <updated>1479729197974</updated>
     </task>
+    <task id="LOCAL-00001" summary="Integrating initial new version&#10;">
+      <created>1479813383446</created>
+      <updated>1479813383446</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -569,6 +569,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="Integrating initial new version&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrating initial new version&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -917,7 +919,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/appConfig.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="68" selection-start="513" selection-end="513" vertical-scroll-proportion="0.28954422" vertical-offset="0" max-vertical-offset="1440">
+        <state line="17" column="80" selection-start="683" selection-end="683" vertical-scroll-proportion="0.41018766" vertical-offset="0" max-vertical-offset="1440">
           <folding />
         </state>
       </provider>
