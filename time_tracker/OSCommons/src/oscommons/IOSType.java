@@ -16,14 +16,15 @@ public interface IOSType {
 
     boolean shutdownApplication(String filename, String mainApplicationName);
 
-    void getFocusedApplication(String scriptPath, String outputPath, String outputFilename);
+    String getActiveApplicationName(String scriptPath, List<String> params);
+    String getActiveWindowTitle(String scriptPath, List<String> params);
 
-    void getVisitedSites(String scriptPath, String outputPath, String outputFilename);
+    String getActiveURL(String scriptPath, List<String> params);
 
     String executeCommandsFromScriptAndPrintOutput(String filename,
                                                           List<String> params);
 
-    //void getUserIdleTime(String scriptPath, String outputPath, String outputFilename);
+    String getUserIdleTime(String scriptPath, String outputPath, String outputFilename);
 
     void shutdownSystem();
 

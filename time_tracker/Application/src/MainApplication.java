@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
@@ -24,26 +26,54 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 public class MainApplication {
 
-    //private Properties properties = null;
-
-    public static int i = 0;
     public static String uniqueFileName ="";
 
-    //measure the time when no click was received
-    public static long timeWhenNoClickWasReceived = 0;
-
-    private static int currentImageSize = 0;
-    private static int noOfIdenticalImages = 0;
-    private static String rootImagesPathOnServer = "";
+    private static boolean isStarted = false;
 
     private AppConfig configuration = null;
 
     private IOSType OSType = null;
 
+
+    //TESTING!!
+
+
     private final static Logger logger = Logger.getLogger(MainApplication.class);
 
     public MainApplication()
     {
+        /* Get application configuration properties
+         from configuration file provided in command line arguments
+        */
+        String configFile = "/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/appConfig.properties";
+        Properties prop = readProperties(configFile);
+
+        /*
+        * Load log4j configuration
+        * from the same config properties of application
+        * */
+        PropertyConfigurator.configure(configFile);
+
+        if(prop == null || prop.isEmpty())
+        {
+            System.out.println("There is no properties in the configuration file provided");
+            logger.warn("There is no properties in the configuration file provided");
+
+            return;
+        }
+
+        /*
+        * Build AppConfig class from loaded properties
+        * */
+        this.configuration = new AppConfig(prop);
+
+        /*
+        * Choosing local operating system type
+        * */
+        String operatingSystem = System.getProperty("os.name");
+        OSFactory osFactory = new OSFactory(this.configuration.getAdminPassword());
+
+        this.OSType = osFactory.createOSType(operatingSystem);
 
     }
 
@@ -61,6 +91,101 @@ public class MainApplication {
         OSFactory osFactory = new OSFactory(this.configuration.getAdminPassword());
 
         this.OSType = osFactory.createOSType(operatingSystem);
+
+
+
+    }
+
+    public static Properties readProperties(String configFile)
+    {
+
+        Properties prop = new Properties();
+        InputStream input = null;
+
+        try {
+
+            input = new FileInputStream(configFile);
+
+            // load a properties file
+            prop.load(input);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+
+            logger.error("Exception in MainApplication->readProperties -> ",ex);
+
+        } finally {
+            if (input != null) {
+                try {
+                    input.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return prop;
+    }
+
+    public void startServices()
+    {
+        if (!isStarted)
+        {
+            initApplication();
+            run();
+
+            isStarted = true;
+        }
+    }
+
+    public void stopServices()
+    {
+        ApplicationsTracker.stop();
+        ScreenshotManager.stop();
+        UserInteractionService.stop();
+        WindowTitleTracker.stop();
+
+        isStarted = false;
+    }
+
+    public void getData()
+    {
+        ConcurrentLinkedDeque<DataCollectionStructure> results = new ConcurrentLinkedDeque<>();
+
+
+        results.addAll(ApplicationsTracker.getDataAndResetCollector());
+
+
+        String data = results.toString();
+
+        try
+        {
+            writeDataToFile(this.configuration.getImagesLocalRootFolder() + "/ceva.txt", data);
+        }
+        catch(Exception e)
+        {
+            logger.error("Exception: ",e);
+        }
+    }
+
+
+    private static void writeDataToFile(String outputFilename, String stringData) throws Exception
+    {
+        File outputFile = new File(outputFilename);
+        BufferedWriter bufferedWriter = null;
+
+        if(outputFile.exists())
+        {
+            bufferedWriter = new BufferedWriter(new FileWriter(outputFile,true));
+        }
+        else
+        {
+            bufferedWriter = new BufferedWriter(new FileWriter(outputFile));
+        }
+
+        bufferedWriter.write(stringData + "\r\n");
+
+        bufferedWriter.close();
     }
 
     public static void main(String args[]) throws Exception
@@ -102,37 +227,6 @@ public class MainApplication {
         application.run();
     }
 
-    public static Properties readProperties(String configFile)
-    {
-
-        Properties prop = new Properties();
-        InputStream input = null;
-
-        try {
-
-            input = new FileInputStream(configFile);
-
-            // load a properties file
-            prop.load(input);
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-
-            logger.error("Exception in MainApplication->readProperties -> ",ex);
-
-        } finally {
-            if (input != null) {
-                try {
-                    input.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        return prop;
-    }
-
     public void run()
     {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);
@@ -144,18 +238,32 @@ public class MainApplication {
         startApplicationsTrackerService(executor);
 
         /*
+        * function responsible for tracking the current active window title
+        * */
+        //startWindowTitleTrackerService(executor);
+
+        /*
         * function responsible for checking the user interaction time
         * with the pc
         * */
-        startUserInteractionService(executor);
+        //startUserInteractionService(executor);
 
         /*
         * take screenshots and save them locally
         * */
-        startScreenshotManagerService(executor);
-
+        //startScreenshotManagerService(executor);
 
         executor.shutdown();
+    }
+
+    public void startWindowTitleTrackerService(ThreadPoolExecutor executor)
+    {
+
+        //TODO:
+        WindowTitleTracker windowTitleTracker = new WindowTitleTracker(this.OSType, configuration);
+
+        logger.info("execute.windowTitleTracker..");
+        executor.execute(windowTitleTracker );
     }
 
     public void startScreenshotManagerService(ThreadPoolExecutor executor)

@@ -4,61 +4,48 @@ import oscommons.IOSType;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.concurrent.ConcurrentLinkedDeque;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * Created by admin on 11/21/16.
+ * Created by admin on 11/22/16.
  */
-public class ApplicationsTracker implements Runnable {
+public class WindowTitleTracker implements Runnable {
 
     private IOSType osType = null;
     private long timeout = 3000;
 
     private String scriptPath = "";
     private String outputFolderPath = "";
-    private String outputAppsFilename = "";
-
-    //private List<DataCollectionStructure> collectedResults;
-    private static ConcurrentLinkedDeque<DataCollectionStructure> synchronizedCollectedResults;
+    private String outputTitlesFilename = "";
 
     public static volatile boolean isStopped;
 
     AppConfig configuration = null;
 
-    private final static Logger logger = Logger.getLogger(ApplicationsTracker.class);
+    private final static Logger logger = Logger.getLogger(WindowTitleTracker.class);
 
-    public ApplicationsTracker(IOSType type,
+    public WindowTitleTracker(IOSType type,
                                AppConfig configuration)
     {
         this.osType = type;
         this.configuration = configuration;
 
         //todo:
-        this.scriptPath = this.configuration.getGetFocusedApplicationScriptPath();
+        this.scriptPath = this.configuration.getGetFocusedWindowTitleScriptPath();
         this.outputFolderPath = this.configuration.getImagesLocalRootFolder();
-        this.outputAppsFilename = this.configuration.getAccessedAppsFilename();
-
-        //collectedResults = new ArrayList<>();
-        synchronizedCollectedResults = new ConcurrentLinkedDeque<>();
+        this.outputTitlesFilename = this.configuration.getGetWindowTitleFilename();
 
         isStopped = false;
     }
 
     public void run()
     {
-
         if(osType!=null)
         {
             while(!isStopped)
             {
-
                 try
                 {
-                    getFocusedApplication(scriptPath, outputFolderPath, outputAppsFilename);
+                    getActiveWindowTitle(scriptPath, outputFolderPath, outputTitlesFilename);
                 }
                 catch(Exception e)
                 {
@@ -81,42 +68,9 @@ public class ApplicationsTracker implements Runnable {
         }
     }
 
-
-    public static ConcurrentLinkedDeque<DataCollectionStructure> getDataAndResetCollector()
+    public void getActiveWindowTitle(String scriptPath, String outputFolderPath, String outputAppsFilename)
     {
-
-        ConcurrentLinkedDeque<DataCollectionStructure> result = new ConcurrentLinkedDeque<>();
-
-        result.addAll(synchronizedCollectedResults);
-
-        synchronizedCollectedResults.clear();
-
-        return result;
-
-    }
-
-    public void getFocusedApplication(String scriptPath, String outputFolderPath, String outputAppsFilename)
-    {
-        //String outputLine = this.osType.executeCommandsFromScriptAndPrintOutput(scriptPath,null);
-
-        String outputLine = this.osType.getActiveApplicationName(scriptPath, null);
-        System.out.println(outputLine);
-
-        String last = "";
-        if(synchronizedCollectedResults.size() > 0)
-        {
-            last = synchronizedCollectedResults.getLast().data;
-        }
-
-        if(last.equals(outputLine))
-        {
-            synchronizedCollectedResults.getLast().counter++;
-        }
-        else
-        {
-            synchronizedCollectedResults.addLast(new DataCollectionStructure(outputLine,0));
-        }
-        //TODO:
+        String outputLine = this.osType.getActiveWindowTitle(scriptPath, null);
 
         File outputFile = new File(outputFolderPath + "/" + outputAppsFilename);
 

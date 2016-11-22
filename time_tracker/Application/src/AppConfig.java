@@ -33,6 +33,12 @@ public class AppConfig{
     private String getFocusedApplicationScriptPath= "";
     private String accessedAppsFilename= "";
 
+
+
+    private String getFocusedWindowTitleScriptPath= "";
+    private String getWindowTitleFilename= "";
+
+
     private String adminPassword = "";
 
 
@@ -113,6 +119,9 @@ public class AppConfig{
         visitedSitesFilename = properties.getProperty("visitedSitesFilename");
         getFocusedApplicationScriptPath = properties.getProperty("getFocusedApplicationScriptPath");
         accessedAppsFilename = properties.getProperty("accessedAppsFilename");
+
+        getFocusedWindowTitleScriptPath = properties.getProperty("getFocusedWindowTitleScriptPath");
+        getWindowTitleFilename = properties.getProperty("getWindowTitleFilename");
 
         userInteractionIdleScriptPath = properties.getProperty("userInteractionIdleScriptPath");
         userInteractionIdleOutputFilename = properties.getProperty("userInteractionIdleOutputFilename");
@@ -230,4 +239,11 @@ public class AppConfig{
         return userInteractionIdleScriptPath;
     }
 
+    public String getGetFocusedWindowTitleScriptPath() {
+        return getFocusedWindowTitleScriptPath;
+    }
+
+    public String getGetWindowTitleFilename() {
+        return getWindowTitleFilename;
+    }
 }

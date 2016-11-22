@@ -20,52 +20,30 @@ public class LinuxOSType implements IOSType {
         this.adminPassword = adminPassword;
     }
 
-    public void getFocusedApplication(String scriptPath, String outputPath,String outputFilename)
+    public String getActiveWindowTitle(String scriptPath, List<String> params)
     {
 
-        String outputLine = executeCommandsFromScriptAndPrintOutput(scriptPath,null);
+        String result = "";
+        String outputLine = executeCommandsFromScriptAndPrintOutput(scriptPath,params);
 
-        System.out.println(outputLine);
+        //preprocess the read line in order to take the site name and browser name
+        //result = preprocessCurrentAppName(outputLine);
+        result = outputLine;
 
-        if(outputLine.isEmpty())
-        {
-            return;
-        }
+        return result;
+    }
 
-        File outputFile = new File(outputPath + "/" + outputFilename);
+    public String getActiveApplicationName(String scriptPath,  List<String> params)
+    {
 
-        try{
+        String result = "";
 
-            BufferedWriter bufferedWriter = null;
+        String outputLine = executeCommandsFromScriptAndPrintOutput(scriptPath,params);
 
-            if(outputFile.exists())
-            {
-                bufferedWriter = new BufferedWriter(new FileWriter(outputFile,true));
-            }
-            else
-            {
-                bufferedWriter = new BufferedWriter(new FileWriter(outputFile));
-            }
+        //preprocess the read line in order to take the site name and browser name
+        result = preprocessCurrentAppName(outputLine);
 
-
-
-            //preprocess the read line in order to take the site name and browser name
-            outputLine = preprocessCurrentAppName(outputLine);
-
-
-
-            bufferedWriter.write(outputLine + "\r\n");
-
-            bufferedWriter.close();
-
-        }
-        catch(Exception e)
-        {
-            logger.error(e);
-        }
-
-
-
+        return result;
     }
 
     public String preprocessCurrentAppName(String line)
@@ -94,53 +72,14 @@ public class LinuxOSType implements IOSType {
         return result;
     }
 
-    public void getVisitedSites(String scriptPath,
-                                String outputPath,
-                                String outputFilename)
+    public String getActiveURL(String scriptPath,
+                               List<String> params)
     {
+        String result = "";
 
-        String outputLine = executeCommandsFromScriptAndPrintOutput(scriptPath,null);
+        result = executeCommandsFromScriptAndPrintOutput(scriptPath,params);
 
-        if(outputLine.isEmpty())
-        {
-            return;
-        }
-
-        File outputFile = new File(outputPath + "/" + outputFilename);
-
-        try{
-
-            BufferedWriter bufferedWriter = null;
-
-            if(outputFile.exists())
-            {
-                bufferedWriter = new BufferedWriter(new FileWriter(outputFile,true));
-            }
-            else
-            {
-                bufferedWriter = new BufferedWriter(new FileWriter(outputFile));
-            }
-
-
-
-            //preprocess the read line in order to take the site name and browser name
-            outputLine = preprocessCurrentWebsiteAppName(outputLine);
-
-
-            if(validateBrowser(outputLine))
-            {
-                bufferedWriter.write(outputLine + "\r\n");
-            }
-
-
-            bufferedWriter.close();
-
-        }
-        catch(Exception e)
-        {
-            logger.error(e);
-        }
-
+        return result;
     }
 
 
@@ -394,10 +333,11 @@ public class LinuxOSType implements IOSType {
     }
 
 
-    public void getUserIdleTime(String scriptPath, String outputPath, String outputFilename)
+    public String getUserIdleTime(String scriptPath, String outputPath, String outputFilename)
     {
+        String output = executeCommandsFromScriptAndPrintOutput(scriptPath,null);
 
-
+        return output;
     }
 
 

@@ -17,6 +17,8 @@ public class UserInteractionService implements Runnable {
     private String outputFolderPath = "";
     private String outputIdleFilename = "";
 
+    public static volatile boolean isStopped;
+
     AppConfig configuration = null;
 
     private final static Logger logger = Logger.getLogger(UserInteractionService.class);
@@ -31,6 +33,8 @@ public class UserInteractionService implements Runnable {
         this.scriptPath = this.configuration.getUserInteractionIdleScriptPath();
         this.outputFolderPath = this.configuration.getImagesLocalRootFolder();
         this.outputIdleFilename = this.configuration.getUserInteractionIdleOutputFilename();
+
+        isStopped = false;
     }
 
     public void run()
@@ -39,7 +43,7 @@ public class UserInteractionService implements Runnable {
         if(osType!=null)
         {
 
-            while(true)
+            while(!isStopped)
             {
 
                 try
@@ -59,7 +63,6 @@ public class UserInteractionService implements Runnable {
                 {
                     logger.error("Exception in UserInteractionService: ", e);
                 }
-
 
             }
         }
@@ -90,10 +93,16 @@ public class UserInteractionService implements Runnable {
 
     public void getUserIdleTime(String scriptPath, String outputFolderPath, String outputIdleFilename) throws Exception
     {
-        String outputLine = this.osType.executeCommandsFromScriptAndPrintOutput(scriptPath, null);
+        //String outputLine = this.osType.executeCommandsFromScriptAndPrintOutput(scriptPath, null);
 
+        String outputLine = this.osType.getUserIdleTime(scriptPath, outputFolderPath, outputIdleFilename);
         writeDataToFile(outputFolderPath + "/" + outputIdleFilename, outputLine);
-
     }
+
+    public static void stop()
+    {
+        isStopped = true;
+    }
+
 
 }

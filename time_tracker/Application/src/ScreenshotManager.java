@@ -21,11 +21,14 @@ public class ScreenshotManager implements Runnable {
     private AppConfig configuration = null;
     private static long timeWhenNoClickWasReceived = 0;
 
+    public static volatile boolean isStopped;
+
     private final static Logger logger = Logger.getLogger(ScreenshotManager.class);
 
     public ScreenshotManager(AppConfig configuration)
     {
         this.configuration = configuration;
+        isStopped = false;
     }
 
     public void run()
@@ -35,7 +38,7 @@ public class ScreenshotManager implements Runnable {
 
         int index = 1;
 
-        while(true)
+        while(!isStopped)
         {
 
             long startTime = System.currentTimeMillis();
@@ -120,6 +123,12 @@ public class ScreenshotManager implements Runnable {
         }
 
     }
+
+    public static void stop()
+    {
+        isStopped = true;
+    }
+
 }
 
 
