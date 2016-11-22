@@ -19,7 +19,7 @@ public class UserInteractionService implements Runnable {
 
     AppConfig configuration = null;
 
-    private final static Logger logger = Logger.getLogger(VisitedSitesService.class);
+    private final static Logger logger = Logger.getLogger(UserInteractionService.class);
 
     public UserInteractionService(IOSType type,
                                AppConfig configuration)

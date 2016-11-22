@@ -19,7 +19,7 @@ public class ApplicationsTracker implements Runnable {
 
     AppConfig configuration = null;
 
-    private final static Logger logger = Logger.getLogger(VisitedSitesService.class);
+    private final static Logger logger = Logger.getLogger(ApplicationsTracker.class);
 
     public ApplicationsTracker(IOSType type,
                                AppConfig configuration)

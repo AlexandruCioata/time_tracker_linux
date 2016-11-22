@@ -1,93 +1,26 @@
-2016-11-21 18:25:39 INFO  MainApplication:369 - MainApplication.generateUniqueComputerName()..
-2016-11-21 18:25:39 INFO  MainApplication:160 - execute.mouseListener..
-2016-11-21 18:25:39 INFO  MainApplication:168 - execute.applicationsTracker..
-2016-11-21 18:25:39 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_active_application.sh
-2016-11-21 18:25:39 INFO  MainApplication:177 - execute.userInteractionService..
-2016-11-21 18:25:39 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-21 18:25:42 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-21 18:25:42 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_active_application.sh
-2016-11-21 18:25:45 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-21 18:25:45 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_active_application.sh
-2016-11-21 18:25:48 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-21 18:25:48 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_active_application.sh
-2016-11-21 18:25:51 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-21 18:25:51 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_active_application.sh
-2016-11-21 18:25:54 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-21 18:25:54 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_active_application.sh
-2016-11-21 18:25:57 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-21 18:25:57 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_active_application.sh
-2016-11-21 18:26:22 INFO  MainApplication:369 - MainApplication.generateUniqueComputerName()..
-2016-11-21 18:26:22 INFO  MainApplication:151 - execute.keyLogger..
-2016-11-21 18:26:22 INFO  MainApplication:160 - execute.mouseListener..
-2016-11-21 18:26:22 INFO  MainApplication:168 - execute.applicationsTracker..
-2016-11-21 18:26:22 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_active_application.sh
-2016-11-21 18:26:22 INFO  MainApplication:177 - execute.userInteractionService..
-2016-11-21 18:26:22 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-21 18:26:25 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-21 18:26:25 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_active_application.sh
-2016-11-21 18:26:28 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-21 18:26:28 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_active_application.sh
-2016-11-21 18:26:31 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-21 18:26:31 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_active_application.sh
-2016-11-21 18:26:34 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-21 18:26:34 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_active_application.sh
-2016-11-21 18:26:37 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-21 18:26:38 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_active_application.sh
-2016-11-21 18:26:40 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-21 18:26:41 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:08:43 INFO  MainApplication:366 - MainApplication.generateUniqueComputerName()..
-2016-11-22 13:08:43 INFO  MainApplication:151 - execute.keyLogger..
-2016-11-22 13:08:43 INFO  MainApplication:160 - execute.mouseListener..
-2016-11-22 13:08:43 INFO  MainApplication:168 - execute.applicationsTracker..
-2016-11-22 13:08:43 ERROR LinuxOSType:365 - Script not found! -> /home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/scripts/get_active_application.sh
-2016-11-22 13:08:43 INFO  MainApplication:177 - execute.userInteractionService..
-2016-11-22 13:08:43 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:08:46 ERROR LinuxOSType:365 - Script not found! -> /home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/scripts/get_active_application.sh
-2016-11-22 13:08:46 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:08:49 ERROR LinuxOSType:365 - Script not found! -> /home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/scripts/get_active_application.sh
-2016-11-22 13:08:49 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:08:52 ERROR LinuxOSType:365 - Script not found! -> /home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/scripts/get_active_application.sh
-2016-11-22 13:08:52 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:09:51 INFO  MainApplication:366 - MainApplication.generateUniqueComputerName()..
-2016-11-22 13:09:51 INFO  MainApplication:151 - execute.keyLogger..
-2016-11-22 13:09:51 INFO  MainApplication:160 - execute.mouseListener..
-2016-11-22 13:09:51 INFO  MainApplication:168 - execute.applicationsTracker..
-2016-11-22 13:09:51 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:09:51 INFO  MainApplication:177 - execute.userInteractionService..
-2016-11-22 13:09:51 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:09:54 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:09:54 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:09:57 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:09:57 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:00 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:00 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:03 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:03 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:06 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:06 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:09 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:09 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:12 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:12 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:15 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:15 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:18 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:18 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:21 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:21 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:24 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:24 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:27 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:28 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:30 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:31 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:33 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:34 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:36 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:37 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:39 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:40 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:42 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:43 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
-2016-11-22 13:10:45 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
-2016-11-22 13:10:46 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
+2016-11-22 14:22:58 INFO  MainApplication:205 - MainApplication.generateUniqueComputerName()..
+2016-11-22 14:22:58 INFO  MainApplication:173 - execute.applicationsTracker..
+2016-11-22 14:22:58 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
+2016-11-22 14:22:58 INFO  MainApplication:182 - execute.userInteractionService..
+2016-11-22 14:22:58 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
+2016-11-22 14:22:58 INFO  MainApplication:165 - execute.screenshotManager..
+2016-11-22 14:23:01 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
+2016-11-22 14:23:01 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
+2016-11-22 14:23:04 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
+2016-11-22 14:23:04 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
+2016-11-22 14:23:07 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
+2016-11-22 14:23:07 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
+2016-11-22 14:23:10 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
+2016-11-22 14:23:10 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
+2016-11-22 14:23:13 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
+2016-11-22 14:23:13 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
+2016-11-22 14:23:16 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
+2016-11-22 14:23:17 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
+2016-11-22 14:23:19 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
+2016-11-22 14:23:20 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
+2016-11-22 14:23:22 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
+2016-11-22 14:23:23 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
+2016-11-22 14:23:25 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
+2016-11-22 14:23:26 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh
+2016-11-22 14:23:28 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_user_interaction_idle_time.sh
+2016-11-22 14:23:29 INFO  LinuxOSType:308 - Executing commands script:/home/admin/google_drive/Birou/workspace/time_tracker_linux/time_tracker/Application/scripts/get_active_application.sh

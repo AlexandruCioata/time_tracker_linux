@@ -13,14 +13,9 @@ public class AppConfig{
     private int maxNoScreenshotsStored = -1;
 
     private String imagesLocalRootFolder = "";
-    private String rootImagesPathOnServer = "";
-    private String rootCroppedImagesPathOnServer = "";
 
     //maximum time (s) accepted for no interaction with the pc
     private long interactionWithPCTimeOut = -1;
-
-    //maximum time (s) accepted for the pc to stay awake with no interaction with it
-    private long SHUTDOWN_TIMEOUT = -1;
 
     public String getVisitedSitesFilename() {
         return visitedSitesFilename;
@@ -34,33 +29,11 @@ public class AppConfig{
         return getFocusedApplicationScriptPath;
     }
 
-    public long getVisitedSitesTimeout() {
-        return visitedSitesTimeout;
-    }
-
-    public long getAccessedAppsTimeout() {
-        return accessedAppsTimeout;
-    }
-
     private String visitedSitesFilename= "";
     private String getFocusedApplicationScriptPath= "";
     private String accessedAppsFilename= "";
-    private long visitedSitesTimeout = -1;
-    private long accessedAppsTimeout = -1;
-
-
-
 
     private String adminPassword = "";
-
-
-    //UpdatesDownloader info
-    private String updateInfoPath = "";
-    private String remoteUpdatesDirPath = "";
-    private String localUpdatesDirPath = "";
-    private String updatesManagerPath = "";
-    private String updatesManagerStartScript = "";
-    private String updatesManagerStopScript = "";
 
 
     private String updatesManagerAppName="";
@@ -76,7 +49,7 @@ public class AppConfig{
     private String userInteractionIdleScriptPath = "";
     private String userInteractionIdleOutputFilename = "";
 
-    private FTPCredentials credentials;
+    //private FTPCredentials credentials;
 
     private final static Logger logger = Logger.getLogger(AppConfig.class);
 
@@ -122,8 +95,6 @@ public class AppConfig{
         }
 
         imagesLocalRootFolder = properties.getProperty("imagesLocalRootFolder");
-        rootImagesPathOnServer = properties.getProperty("rootImagesPathOnServer");
-        rootCroppedImagesPathOnServer = properties.getProperty("rootCroppedImagesPathOnServer");
 
         try
         {
@@ -139,93 +110,12 @@ public class AppConfig{
             interactionWithPCTimeOut = 60;
         }
 
-        try
-        {
-            SHUTDOWN_TIMEOUT = Integer.parseInt(
-                    properties.getProperty("shutdownTimeout").trim());
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-
-            logger.error("Exception in MainApplication -> ",e);
-
-            SHUTDOWN_TIMEOUT = 7200;
-        }
-
         visitedSitesFilename = properties.getProperty("visitedSitesFilename");
         getFocusedApplicationScriptPath = properties.getProperty("getFocusedApplicationScriptPath");
         accessedAppsFilename = properties.getProperty("accessedAppsFilename");
 
         userInteractionIdleScriptPath = properties.getProperty("userInteractionIdleScriptPath");
         userInteractionIdleOutputFilename = properties.getProperty("userInteractionIdleOutputFilename");
-
-        try
-        {
-            visitedSitesTimeout = Integer.parseInt(
-                    properties.getProperty("visitedSitesTimeout").trim());
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-
-            logger.error("Exception in MainApplication -> ",e);
-
-            visitedSitesTimeout = 3000;
-        }
-
-
-        try
-        {
-            accessedAppsTimeout = Integer.parseInt(
-                    properties.getProperty("accessedAppsTimeout").trim());
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-
-            logger.error("Exception in MainApplication -> ",e);
-
-            accessedAppsTimeout = 3000;
-        }
-
-
-
-
-
-    /*
-    * FTP credentials information
-    * */
-        String host = properties.getProperty("ftpHost");
-        String user = properties.getProperty("ftpUser");
-        String pass = properties.getProperty("ftpPassword");
-        int port = 0;
-
-        try{
-
-            port = Integer.parseInt(properties.getProperty("ftpPort").trim());
-
-        }catch(Exception e)
-        {
-            e.printStackTrace();
-
-            logger.error("Exception in MainApplication -> ",e);
-
-            port = 21;
-        }
-
-        adminPassword = properties.getProperty("adminPassword");
-
-        credentials = new FTPCredentials(host,port,user,pass);
-
-        remoteUpdatesDirPath = properties.getProperty("remoteUpdatesDirPath");
-        localUpdatesDirPath = properties.getProperty("localUpdatesDirPath");
-        updatesManagerPath=properties.getProperty("updatesManagerPath");
-        updatesManagerStartScript=properties.getProperty("updatesManagerStartScript");
-        updatesManagerStopScript=properties.getProperty("updatesManagerStopScript");
-        updatesManagerAppName=properties.getProperty("updatesManagerAppName");
-        updateInfoPath = properties.getProperty("updateInfoPath");
-
 
 
         /*
@@ -270,27 +160,21 @@ public class AppConfig{
         System.out.println(computerNumber);
         System.out.println(maxNoScreenshotsStored);
         System.out.println(imagesLocalRootFolder);
-        System.out.println(rootImagesPathOnServer);
-        System.out.println(rootCroppedImagesPathOnServer);
-        System.out.println(interactionWithPCTimeOut);
-        System.out.println(SHUTDOWN_TIMEOUT);
-        System.out.println(adminPassword);
 
-        System.out.println(updateInfoPath);
-        System.out.println(remoteUpdatesDirPath);
-        System.out.println(localUpdatesDirPath);
-        System.out.println(updatesManagerPath);
-        System.out.println(updatesManagerStartScript);
+        System.out.println(interactionWithPCTimeOut);
+        System.out.println(adminPassword);
 
         System.out.println(TIMEOUT_UPLOAD_LOG_FILES);
         System.out.println(remoteRootLogPath);
         System.out.println(logFileName);
 
+/*
         System.out.println("credentials");
         System.out.println(credentials.user);
         System.out.println(credentials.pass);
         System.out.println(credentials.server);
         System.out.println(credentials.port);
+*/
 
     }
 
@@ -307,49 +191,19 @@ public class AppConfig{
         return imagesLocalRootFolder;
     }
 
-    public String getRootImagesPathOnServer() {
-        return rootImagesPathOnServer;
-    }
-
-    public String getRootCroppedImagesPathOnServer() {
-        return rootCroppedImagesPathOnServer;
-    }
-
     public long getInteractionWithPCTimeOut() {
         return interactionWithPCTimeOut;
     }
 
-    public long getSHUTDOWN_TIMEOUT() {
-        return SHUTDOWN_TIMEOUT;
-    }
 
     public String getAdminPassword() {
         return adminPassword;
     }
 
-    public String getUpdateInfoPath() {
-        return updateInfoPath;
-    }
 
-    public String getRemoteUpdatesDirPath() {
-        return remoteUpdatesDirPath;
-    }
-
-    public String getLocalUpdatesDirPath() {
-        return localUpdatesDirPath;
-    }
-
-    public String getUpdatesManagerPath() {
-        return updatesManagerPath;
-    }
-
-    public String getUpdatesManagerStartScript() {
-        return updatesManagerStartScript;
-    }
-
-    public FTPCredentials getCredentials() {
+/*    public FTPCredentials getCredentials() {
         return credentials;
-    }
+    }*/
 
     public long getTIMEOUT_UPLOAD_LOG_FILES() {
         return TIMEOUT_UPLOAD_LOG_FILES;
@@ -363,9 +217,6 @@ public class AppConfig{
         return logFileName;
     }
 
-    public String getUpdatesManagerStopScript() {
-        return updatesManagerStopScript;
-    }
 
     public String getUpdatesManagerAppName() {
         return updatesManagerAppName;
