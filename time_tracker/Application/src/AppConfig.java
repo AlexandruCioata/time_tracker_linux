@@ -30,6 +30,13 @@ public class AppConfig{
     }
 
     private String visitedSitesFilename= "";
+
+    public String getGetVisitedSiteScriptPath() {
+        return getVisitedSiteScriptPath;
+    }
+
+    private String getVisitedSiteScriptPath= "";
+
     private String getFocusedApplicationScriptPath= "";
     private String accessedAppsFilename= "";
 
@@ -117,6 +124,8 @@ public class AppConfig{
         }
 
         visitedSitesFilename = properties.getProperty("visitedSitesFilename");
+        getVisitedSiteScriptPath = properties.getProperty("getVisitedSiteScriptPath");
+
         getFocusedApplicationScriptPath = properties.getProperty("getFocusedApplicationScriptPath");
         accessedAppsFilename = properties.getProperty("accessedAppsFilename");
 

@@ -77,6 +77,7 @@ public class LinuxOSType implements IOSType {
     {
         String result = "";
 
+        //TODO: implement the URL getter service
         result = executeCommandsFromScriptAndPrintOutput(scriptPath,params);
 
         return result;

@@ -4,6 +4,7 @@ import oscommons.IOSType;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
  * Created by admin on 11/22/16.
@@ -16,6 +17,8 @@ public class WindowTitleTracker implements Runnable {
     private String scriptPath = "";
     private String outputFolderPath = "";
     private String outputTitlesFilename = "";
+
+    private static ConcurrentLinkedDeque<DataCollectionStructure> synchronizedCollectedResults;
 
     public static volatile boolean isStopped;
 
@@ -33,6 +36,8 @@ public class WindowTitleTracker implements Runnable {
         this.scriptPath = this.configuration.getGetFocusedWindowTitleScriptPath();
         this.outputFolderPath = this.configuration.getImagesLocalRootFolder();
         this.outputTitlesFilename = this.configuration.getGetWindowTitleFilename();
+
+        synchronizedCollectedResults = new ConcurrentLinkedDeque<>();
 
         isStopped = false;
     }
@@ -68,9 +73,41 @@ public class WindowTitleTracker implements Runnable {
         }
     }
 
+
+    public static ConcurrentLinkedDeque<DataCollectionStructure> getDataAndResetCollector()
+    {
+
+        ConcurrentLinkedDeque<DataCollectionStructure> result = new ConcurrentLinkedDeque<>();
+
+        result.addAll(synchronizedCollectedResults);
+
+        synchronizedCollectedResults.clear();
+
+        return result;
+
+    }
+
     public void getActiveWindowTitle(String scriptPath, String outputFolderPath, String outputAppsFilename)
     {
         String outputLine = this.osType.getActiveWindowTitle(scriptPath, null);
+
+        String last = "";
+        if(synchronizedCollectedResults.size() > 0)
+        {
+            last = synchronizedCollectedResults.getLast().data;
+        }
+
+        if(last.equals(outputLine))
+        {
+            synchronizedCollectedResults.getLast().counter++;
+        }
+        else
+        {
+            synchronizedCollectedResults.addLast(new DataCollectionStructure(outputLine,0));
+        }
+        //TODO:
+
+
 
         File outputFile = new File(outputFolderPath + "/" + outputAppsFilename);
 

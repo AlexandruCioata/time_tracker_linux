@@ -7,21 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfd255ee-8181-4006-8ea9-47014b8f0979" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/src/DataCollectionStructure.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/src/WindowTitleTracker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/scripts/get_active_window_title.sh" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Dependencies/OSCommons.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cache/log4j-application.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cache/user_interaction.txt" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/src/GlobalDataCollector.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Application/src/URLTrackerService.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cache/accessed_apps.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dependencies/OSCommons.jar" afterPath="$PROJECT_DIR$/Dependencies/OSCommons.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/AppConfig.java" afterPath="$PROJECT_DIR$/Application/src/AppConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/ApplicationsTracker.java" afterPath="$PROJECT_DIR$/Application/src/ApplicationsTracker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OSCommons/src/oscommons/IOSType.java" afterPath="$PROJECT_DIR$/OSCommons/src/oscommons/IOSType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/OSCommons/src/oscommons/LinuxOSType.java" afterPath="$PROJECT_DIR$/OSCommons/src/oscommons/LinuxOSType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/MainApplication.java" afterPath="$PROJECT_DIR$/Application/src/MainApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/MainUserInterface.java" afterPath="$PROJECT_DIR$/Application/src/MainUserInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/ScreenshotManager.java" afterPath="$PROJECT_DIR$/Application/src/ScreenshotManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/UserInteractionService.java" afterPath="$PROJECT_DIR$/Application/src/UserInteractionService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/accessed_apps.txt" afterPath="$PROJECT_DIR$/cache/accessed_apps.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/src/WindowTitleTracker.java" afterPath="$PROJECT_DIR$/Application/src/WindowTitleTracker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appConfig.properties" afterPath="$PROJECT_DIR$/appConfig.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -87,10 +83,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainApplication.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainApplication.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/src/MainApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="41" selection-start="4014" selection-end="4014" vertical-scroll-proportion="0.0" vertical-offset="1407" max-vertical-offset="4824">
+            <state line="59" column="19" selection-start="1702" selection-end="1702" vertical-scroll-proportion="0.27730194" vertical-offset="479" max-vertical-offset="5526">
               <folding>
                 <element signature="method#MainApplication#1;class#MainApplication#0" expanded="false" />
                 <element signature="method#readProperties#0;class#MainApplication#0" expanded="false" />
@@ -99,11 +95,25 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="URLTrackerService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/src/URLTrackerService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="45" selection-start="2306" selection-end="2306" vertical-scroll-proportion="0.0" vertical-offset="1075" max-vertical-offset="3096">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AppConfig.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/src/AppConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="63" selection-start="3011" selection-end="3011" vertical-scroll-proportion="0.0" vertical-offset="2034" max-vertical-offset="4590">
-              <folding />
+            <state line="34" column="40" selection-start="847" selection-end="847" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="4122">
+              <folding>
+                <element signature="e#805#806#0" expanded="true" />
+                <element signature="e#852#853#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,55 +121,7 @@
       <file leaf-file-name="LinuxOSType.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OSCommons/src/oscommons/LinuxOSType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="29" selection-start="2728" selection-end="2728" vertical-scroll-proportion="0.0" vertical-offset="1962" max-vertical-offset="6750">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplicationsTracker.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/ApplicationsTracker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="41" selection-start="2429" selection-end="2429" vertical-scroll-proportion="0.0" vertical-offset="1083" max-vertical-offset="3186">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataCollectionStructure.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/DataCollectionStructure.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="5" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserInteractionService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/UserInteractionService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="31" selection-start="2086" selection-end="2086" vertical-scroll-proportion="0.0" vertical-offset="1034" max-vertical-offset="1962">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainUserInterface.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/src/MainUserInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="45" selection-start="211" selection-end="211" vertical-scroll-proportion="0.17821783" vertical-offset="0" max-vertical-offset="2430">
-              <folding>
-                <element signature="e#1526#1712#0" expanded="true" />
-                <element signature="e#1701#1702#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WindowTitleTracker.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/src/WindowTitleTracker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="44" selection-start="1810" selection-end="1810" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="2448">
+            <state line="77" column="27" selection-start="2061" selection-end="2061" vertical-scroll-proportion="0.0" vertical-offset="702" max-vertical-offset="6768">
               <folding />
             </state>
           </provider>
@@ -168,8 +130,23 @@
       <file leaf-file-name="appConfig.properties" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appConfig.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="700" selection-end="700" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1044">
+            <state line="14" column="24" selection-start="471" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="86" max-vertical-offset="1080">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GlobalDataCollector.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/src/GlobalDataCollector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="0" selection-start="2275" selection-end="2275" vertical-scroll-proportion="0.0" vertical-offset="650" max-vertical-offset="1710">
+              <folding>
+                <element signature="method#setApplicationData#0;class#Builder#0;class#GlobalDataCollector#0" expanded="true" />
+                <element signature="method#setWindowTitleServiceData#0;class#Builder#0;class#GlobalDataCollector#0" expanded="true" />
+                <element signature="method#setTakenScreenshotData#0;class#Builder#0;class#GlobalDataCollector#0" expanded="true" />
+                <element signature="method#setInteractionTimeServiceData#0;class#Builder#0;class#GlobalDataCollector#0" expanded="true" />
+                <element signature="method#setURLTrackerServiceData#0;class#Builder#0;class#GlobalDataCollector#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -194,18 +171,22 @@
         <option value="$PROJECT_DIR$/Application/src/CelsiusConverterGUI.java" />
         <option value="$PROJECT_DIR$/OSCommons/src/oscommons/OSFactory.java" />
         <option value="$PROJECT_DIR$/Application/src/Uploader.java" />
-        <option value="$PROJECT_DIR$/Application/src/ScreenshotManager.java" />
-        <option value="$PROJECT_DIR$/Application/src/UserInteractionService.java" />
         <option value="$PROJECT_DIR$/OSCommons/src/oscommons/IOSType.java" />
+        <option value="$PROJECT_DIR$/Application/src/DataCollector.java" />
+        <option value="$PROJECT_DIR$/Application/src/MainUserInterface.java" />
+        <option value="$PROJECT_DIR$/Application/src/WindowTitleTracker.java" />
+        <option value="$PROJECT_DIR$/Application/src/ScreenshotManager.java" />
+        <option value="$PROJECT_DIR$/Application/src/DataCollectorStructure.java" />
+        <option value="$PROJECT_DIR$/Application/src/DataCollectionStructure.java" />
+        <option value="$PROJECT_DIR$/Application/src/ApplicationsTracker.java" />
+        <option value="$PROJECT_DIR$/Application/src/UserInteractionService.java" />
+        <option value="$PROJECT_DIR$/Application/src/URLFetcher.java" />
         <option value="$PROJECT_DIR$/OSCommons/src/oscommons/LinuxOSType.java" />
         <option value="$PROJECT_DIR$/appConfig.properties" />
         <option value="$PROJECT_DIR$/Application/src/AppConfig.java" />
-        <option value="$PROJECT_DIR$/Application/src/WindowTitleTracker.java" />
-        <option value="$PROJECT_DIR$/Application/src/DataCollector.java" />
-        <option value="$PROJECT_DIR$/Application/src/MainUserInterface.java" />
+        <option value="$PROJECT_DIR$/Application/src/URLTrackerService.java" />
+        <option value="$PROJECT_DIR$/Application/src/GlobalDataCollector.java" />
         <option value="$PROJECT_DIR$/Application/src/MainApplication.java" />
-        <option value="$PROJECT_DIR$/Application/src/ApplicationsTracker.java" />
-        <option value="$PROJECT_DIR$/Application/src/DataCollectionStructure.java" />
       </list>
     </option>
   </component>
@@ -299,7 +280,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -388,7 +369,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -614,7 +595,11 @@
       <created>1479818208514</created>
       <updated>1479818208514</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactoring before integrating the interface&#10;">
+      <created>1479840145924</created>
+      <updated>1479840145924</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -634,7 +619,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16010782" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19191375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -670,20 +655,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/src/DataCollectionStructure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="31" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="396">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/UserInteractionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="5" selection-start="2389" selection-end="2389" vertical-scroll-proportion="0.0" vertical-offset="1638" max-vertical-offset="2052">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/MainUserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="25" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="2304">
@@ -721,7 +692,10 @@
     <entry file="file://$PROJECT_DIR$/Application/src/AppConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="311" column="5" selection-start="8931" selection-end="8931" vertical-scroll-proportion="0.0" vertical-offset="5598" max-vertical-offset="6984">
-          <folding />
+          <folding>
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -759,7 +733,10 @@
     <entry file="file://$PROJECT_DIR$/Application/src/AppConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="311" column="5" selection-start="8931" selection-end="8931" vertical-scroll-proportion="0.0" vertical-offset="5598" max-vertical-offset="6984">
-          <folding />
+          <folding>
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -797,7 +774,10 @@
     <entry file="file://$PROJECT_DIR$/Application/src/AppConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="311" column="5" selection-start="8931" selection-end="8931" vertical-scroll-proportion="0.0" vertical-offset="5598" max-vertical-offset="6984">
-          <folding />
+          <folding>
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -835,7 +815,10 @@
     <entry file="file://$PROJECT_DIR$/Application/src/AppConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="311" column="5" selection-start="8931" selection-end="8931" vertical-scroll-proportion="0.0" vertical-offset="5598" max-vertical-offset="6984">
-          <folding />
+          <folding>
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -873,7 +856,10 @@
     <entry file="file://$PROJECT_DIR$/Application/src/AppConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="311" column="5" selection-start="8931" selection-end="8931" vertical-scroll-proportion="0.0" vertical-offset="5598" max-vertical-offset="6066">
-          <folding />
+          <folding>
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -901,7 +887,10 @@
     <entry file="file://$PROJECT_DIR$/Application/src/AppConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="153" column="9" selection-start="4408" selection-end="4408" vertical-scroll-proportion="0.0" vertical-offset="2754" max-vertical-offset="6660">
-          <folding />
+          <folding>
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -934,13 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/CompressJPEGFIle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="369" selection-end="369" vertical-scroll-proportion="0.057233706" vertical-offset="0" max-vertical-offset="1008">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/CropImage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="13" selection-start="278" selection-end="278" vertical-scroll-proportion="0.14308426" vertical-offset="0" max-vertical-offset="1800">
@@ -955,33 +937,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/ScreenshotManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="5" selection-start="2679" selection-end="2679" vertical-scroll-proportion="0.3083512" vertical-offset="1242" max-vertical-offset="2520">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#903#911#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OSCommons/src/oscommons/IOSType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="19" selection-start="433" selection-end="433" vertical-scroll-proportion="0.31270358" vertical-offset="0" max-vertical-offset="921">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/scripts/get_active_window_title.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="58" selection-start="277" selection-end="277" vertical-scroll-proportion="0.122171946" vertical-offset="0" max-vertical-offset="884" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="63" selection-start="3011" selection-end="3011" vertical-scroll-proportion="0.0" vertical-offset="1729" max-vertical-offset="4032">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Runnable.java">
@@ -991,64 +949,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/UserInteractionService.java">
+    <entry file="file://$PROJECT_DIR$/Application/src/MainUserInterface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="31" selection-start="2086" selection-end="2086" vertical-scroll-proportion="0.0" vertical-offset="1034" max-vertical-offset="1962">
+        <state line="22" column="44" selection-start="669" selection-end="669" vertical-scroll-proportion="0.42398286" vertical-offset="0" max-vertical-offset="2430">
+          <folding>
+            <element signature="e#1526#1712#0" expanded="true" />
+            <element signature="e#1701#1702#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/DataCollectionStructure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="25" selection-start="222" selection-end="222" vertical-scroll-proportion="0.20431328" vertical-offset="0" max-vertical-offset="881">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/MainApplication.java">
+    <entry file="file://$PROJECT_DIR$/Application/src/ScreenshotManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="41" selection-start="4014" selection-end="4014" vertical-scroll-proportion="0.0" vertical-offset="1407" max-vertical-offset="4824">
+        <state line="39" column="0" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0" vertical-offset="464" max-vertical-offset="2844">
           <folding>
-            <element signature="method#MainApplication#1;class#MainApplication#0" expanded="false" />
-            <element signature="method#readProperties#0;class#MainApplication#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/WindowTitleTracker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="44" selection-start="1810" selection-end="1810" vertical-scroll-proportion="0.0" vertical-offset="810" max-vertical-offset="2448">
+        <state line="78" column="0" selection-start="2146" selection-end="2146" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="3096">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appConfig.properties">
+    <entry file="file://$PROJECT_DIR$/Application/src/UserInteractionService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="700" selection-end="700" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1044">
+        <state line="106" column="9" selection-start="3037" selection-end="3037" vertical-scroll-proportion="0.0" vertical-offset="1296" max-vertical-offset="2790">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/DataCollectionStructure.java">
+    <entry file="file://$PROJECT_DIR$/OSCommons/src/oscommons/IOSType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="5" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+        <state line="8" column="0" selection-start="113" selection-end="113" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/CompressJPEGFIle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="369" selection-end="369" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1008">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/src/ApplicationsTracker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="41" selection-start="2429" selection-end="2429" vertical-scroll-proportion="0.0" vertical-offset="1083" max-vertical-offset="3186">
+        <state line="139" column="5" selection-start="3923" selection-end="3923" vertical-scroll-proportion="0.19869708" vertical-offset="2139" max-vertical-offset="3060">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appConfig.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="24" selection-start="471" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="86" max-vertical-offset="1080">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="40" selection-start="847" selection-end="847" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="4122">
+          <folding>
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OSCommons/src/oscommons/LinuxOSType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="29" selection-start="2728" selection-end="2728" vertical-scroll-proportion="0.0" vertical-offset="1890" max-vertical-offset="5490">
+        <state line="77" column="27" selection-start="2061" selection-end="2061" vertical-scroll-proportion="0.0" vertical-offset="702" max-vertical-offset="6768">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/src/MainUserInterface.java">
+    <entry file="file://$PROJECT_DIR$/Application/src/URLTrackerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="45" selection-start="211" selection-end="211" vertical-scroll-proportion="0.17821783" vertical-offset="0" max-vertical-offset="2430">
+        <state line="82" column="45" selection-start="2306" selection-end="2306" vertical-scroll-proportion="0.0" vertical-offset="1075" max-vertical-offset="3096">
           <folding>
-            <element signature="e#1526#1712#0" expanded="true" />
-            <element signature="e#1701#1702#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/GlobalDataCollector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="0" selection-start="2275" selection-end="2275" vertical-scroll-proportion="0.0" vertical-offset="650" max-vertical-offset="1710">
+          <folding>
+            <element signature="method#setApplicationData#0;class#Builder#0;class#GlobalDataCollector#0" expanded="true" />
+            <element signature="method#setWindowTitleServiceData#0;class#Builder#0;class#GlobalDataCollector#0" expanded="true" />
+            <element signature="method#setTakenScreenshotData#0;class#Builder#0;class#GlobalDataCollector#0" expanded="true" />
+            <element signature="method#setInteractionTimeServiceData#0;class#Builder#0;class#GlobalDataCollector#0" expanded="true" />
+            <element signature="method#setURLTrackerServiceData#0;class#Builder#0;class#GlobalDataCollector#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/src/MainApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="19" selection-start="1702" selection-end="1702" vertical-scroll-proportion="0.27730194" vertical-offset="479" max-vertical-offset="5526">
+          <folding>
+            <element signature="method#MainApplication#1;class#MainApplication#0" expanded="false" />
+            <element signature="method#readProperties#0;class#MainApplication#0" expanded="false" />
           </folding>
         </state>
       </provider>

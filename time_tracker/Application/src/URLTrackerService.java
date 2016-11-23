@@ -7,18 +7,16 @@ import java.io.FileWriter;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
- * Created by admin on 11/21/16.
+ * Created by admin on 11/23/16.
  */
-public class UserInteractionService implements Runnable {
+public class URLTrackerService implements Runnable {
 
     private IOSType osType = null;
     private long timeout = 3000;
 
-    private static long INACTIVITY_TIMEOUT = 5000;
-
     private String scriptPath = "";
     private String outputFolderPath = "";
-    private String outputIdleFilename = "";
+    private String outputURLFilename = "";
 
     private static ConcurrentLinkedDeque<DataCollectionStructure> synchronizedCollectedResults;
 
@@ -26,18 +24,18 @@ public class UserInteractionService implements Runnable {
 
     AppConfig configuration = null;
 
-    private final static Logger logger = Logger.getLogger(UserInteractionService.class);
+    private final static Logger logger = Logger.getLogger(URLTrackerService.class);
 
-    public UserInteractionService(IOSType type,
+    public URLTrackerService(IOSType type,
                                AppConfig configuration)
     {
         this.osType = type;
         this.configuration = configuration;
 
         //todo:
-        this.scriptPath = this.configuration.getUserInteractionIdleScriptPath();
+        this.scriptPath = this.configuration.getGetVisitedSiteScriptPath();
         this.outputFolderPath = this.configuration.getImagesLocalRootFolder();
-        this.outputIdleFilename = this.configuration.getUserInteractionIdleOutputFilename();
+        this.outputURLFilename = this.configuration.getVisitedSitesFilename();
 
         synchronizedCollectedResults = new ConcurrentLinkedDeque<>();
 
@@ -49,13 +47,11 @@ public class UserInteractionService implements Runnable {
 
         if(osType!=null)
         {
-
             while(!isStopped)
             {
-
                 try
                 {
-                    getUserIdleTime(scriptPath,outputFolderPath,outputIdleFilename);
+                    getURL(scriptPath, outputFolderPath, outputURLFilename);
                 }
                 catch(Exception e)
                 {
@@ -68,9 +64,8 @@ public class UserInteractionService implements Runnable {
                 }
                 catch(Exception e)
                 {
-                    logger.error("Exception in UserInteractionService: ", e);
+                    logger.error("Exception in AppAndSites: ", e);
                 }
-
             }
         }
         else
@@ -79,9 +74,9 @@ public class UserInteractionService implements Runnable {
         }
     }
 
+
     public static ConcurrentLinkedDeque<DataCollectionStructure> getDataAndResetCollector()
     {
-
         ConcurrentLinkedDeque<DataCollectionStructure> result = new ConcurrentLinkedDeque<>();
 
         result.addAll(synchronizedCollectedResults);
@@ -90,21 +85,11 @@ public class UserInteractionService implements Runnable {
         return result;
     }
 
-    public void getUserIdleTime(String scriptPath, String outputFolderPath, String outputIdleFilename) throws Exception
+    public void getURL(String scriptPath, String outputFolderPath, String outputAppsFilename) throws Exception
     {
-        //String outputLine = this.osType.executeCommandsFromScriptAndPrintOutput(scriptPath, null);
-        String outputLine = this.osType.getUserIdleTime(scriptPath, outputFolderPath, outputIdleFilename);
 
-        String output = "";
-        Integer lastActiveTime = Integer.parseInt(outputLine);
-        if(lastActiveTime < INACTIVITY_TIMEOUT)
-        {
-            output = "ACTIVE";
-        }
-        else
-        {
-            output = "INACTIVE";
-        }
+        String outputLine = this.osType.getActiveURL(scriptPath,null);
+        System.out.println(outputLine);
 
         String last = "";
         if(synchronizedCollectedResults.size() > 0)
@@ -112,44 +97,70 @@ public class UserInteractionService implements Runnable {
             last = synchronizedCollectedResults.getLast().data;
         }
 
-        if(last.equals(output))
+        if(last.equals(outputLine))
         {
             synchronizedCollectedResults.getLast().counter++;
         }
         else
         {
-            synchronizedCollectedResults.addLast(new DataCollectionStructure(output,0));
+            synchronizedCollectedResults.addLast(new DataCollectionStructure(outputLine,0));
         }
+
         //TODO:
+        File outputFile = new File(outputFolderPath + "/" + outputAppsFilename);
 
+        try{
 
-        writeDataToFile(outputFolderPath + "/" + outputIdleFilename, output);
+            BufferedWriter bufferedWriter = null;
+
+            if(outputFile.exists())
+            {
+                bufferedWriter = new BufferedWriter(new FileWriter(outputFile,true));
+            }
+            else
+            {
+                bufferedWriter = new BufferedWriter(new FileWriter(outputFile));
+            }
+
+            bufferedWriter.write(outputLine + "\r\n");
+            bufferedWriter.close();
+        }
+        catch(Exception e)
+        {
+            logger.error(e);
+        }
     }
 
-    private static void writeDataToFile(String outputFilename, String stringData) throws Exception
+
+    public String preprocessCurrentAppName(String line)
     {
-        File outputFile = new File(outputFilename);
-        BufferedWriter bufferedWriter = null;
+        String result = line;
 
-        if(outputFile.exists())
+        //0x04800002  0 15665  mihai-To-be-filled-by-O-E-M Google - Google Chrome
+        String[] parts = line.split(" +");
+        if(parts.length > 4)
         {
-            bufferedWriter = new BufferedWriter(new FileWriter(outputFile,true));
+            String lastPart = parts[4];
+
+            result = line.substring(line.indexOf(lastPart));
         }
-        else
+
+        //System Settings
+        //java - Splitting a string with multiple spaces - Stack Overflow - Google Chrome
+        parts = result.split("-");
+        if(parts.length > 1)
         {
-            bufferedWriter = new BufferedWriter(new FileWriter(outputFile));
+            result = result.substring(result.indexOf(parts[parts.length-1]));
         }
 
-        bufferedWriter.write(stringData + "\r\n");
+        result = result.trim();
 
-        bufferedWriter.close();
+        return result;
     }
-
 
     public static void stop()
     {
         isStopped = true;
     }
-
 
 }

@@ -11,10 +11,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.*;
 import java.util.List;
-import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.Executors;
@@ -74,7 +72,6 @@ public class MainApplication {
         OSFactory osFactory = new OSFactory(this.configuration.getAdminPassword());
 
         this.OSType = osFactory.createOSType(operatingSystem);
-
     }
 
     public MainApplication(Properties properties)
@@ -144,23 +141,42 @@ public class MainApplication {
         ScreenshotManager.stop();
         UserInteractionService.stop();
         WindowTitleTracker.stop();
+        URLTrackerService.stop();
 
         isStarted = false;
     }
 
     public void getData()
     {
-        ConcurrentLinkedDeque<DataCollectionStructure> results = new ConcurrentLinkedDeque<>();
+        GlobalDataCollector globalData = null;
 
+        ConcurrentLinkedDeque<DataCollectionStructure> applicationTrackerData = new ConcurrentLinkedDeque<>();
+        ConcurrentLinkedDeque<DataCollectionStructure> windowTitleServiceData = new ConcurrentLinkedDeque<>();
+        ConcurrentLinkedDeque<DataCollectionStructure> interactionTimeServiceData = new ConcurrentLinkedDeque<>();
+        ConcurrentLinkedDeque<DataCollectionStructure> urlTrackerData = new ConcurrentLinkedDeque<>();
 
-        results.addAll(ApplicationsTracker.getDataAndResetCollector());
+        applicationTrackerData.addAll(ApplicationsTracker.getDataAndResetCollector());
+        windowTitleServiceData.addAll(WindowTitleTracker.getDataAndResetCollector());
+        interactionTimeServiceData.addAll(UserInteractionService.getDataAndResetCollector());
+        urlTrackerData.addAll(URLTrackerService.getDataAndResetCollector());
 
+        //take the screen-shot as byte array
+        byte[] screenshotByteArray = ScreenshotManager.takeScreenshot(
+                this.configuration.getImagesLocalRootFolder());
 
-        String data = results.toString();
+        globalData = new GlobalDataCollector.Builder()
+                .setApplicationData(applicationTrackerData)
+                .setWindowTitleServiceData(windowTitleServiceData)
+                .setTakenScreenshotData(screenshotByteArray)
+                .setInteractionTimeServiceData(interactionTimeServiceData)
+                .setURLTrackerServiceData(urlTrackerData)
+                .build();
+
+        String data = globalData.toString();
 
         try
         {
-            writeDataToFile(this.configuration.getImagesLocalRootFolder() + "/ceva.txt", data);
+            writeDataToFile(this.configuration.getImagesLocalRootFolder() + "/ceva.txt", data, true);
         }
         catch(Exception e)
         {
@@ -169,22 +185,29 @@ public class MainApplication {
     }
 
 
-    private static void writeDataToFile(String outputFilename, String stringData) throws Exception
+    private static void writeDataToFile(String outputFilename, String stringData, boolean append) throws Exception
     {
         File outputFile = new File(outputFilename);
         BufferedWriter bufferedWriter = null;
 
-        if(outputFile.exists())
+        if(append)
         {
-            bufferedWriter = new BufferedWriter(new FileWriter(outputFile,true));
+            if(outputFile.exists() )
+            {
+                bufferedWriter = new BufferedWriter(new FileWriter(outputFile,true));
+            }
+            else
+            {
+                bufferedWriter = new BufferedWriter(new FileWriter(outputFile));
+            }
         }
         else
         {
             bufferedWriter = new BufferedWriter(new FileWriter(outputFile));
         }
 
-        bufferedWriter.write(stringData + "\r\n");
 
+        bufferedWriter.write(stringData + "\r\n");
         bufferedWriter.close();
     }
 
@@ -237,29 +260,44 @@ public class MainApplication {
         * */
         startApplicationsTrackerService(executor);
 
+
+        /*
+        * function responsible for tracking the current application
+        * running on the computer
+        * */
+        startURLTrackerService(executor);
+
         /*
         * function responsible for tracking the current active window title
         * */
-        //startWindowTitleTrackerService(executor);
+        startWindowTitleTrackerService(executor);
 
         /*
         * function responsible for checking the user interaction time
         * with the pc
         * */
-        //startUserInteractionService(executor);
+        startUserInteractionService(executor);
 
         /*
         * take screenshots and save them locally
         * */
-        //startScreenshotManagerService(executor);
+        startScreenshotManagerService(executor);
 
         executor.shutdown();
+    }
+
+    public void startURLTrackerService(ThreadPoolExecutor executor)
+    {
+
+        URLTrackerService urlTrackerService = new URLTrackerService(this.OSType, configuration);
+
+        logger.info("execute.URLTrackerService..");
+        executor.execute(urlTrackerService);
     }
 
     public void startWindowTitleTrackerService(ThreadPoolExecutor executor)
     {
 
-        //TODO:
         WindowTitleTracker windowTitleTracker = new WindowTitleTracker(this.OSType, configuration);
 
         logger.info("execute.windowTitleTracker..");
@@ -280,7 +318,6 @@ public class MainApplication {
 
         logger.info("execute.applicationsTracker..");
         executor.execute(applicationsTracker);
-
     }
 
     public void startUserInteractionService(ThreadPoolExecutor executor)

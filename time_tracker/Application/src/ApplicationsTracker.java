@@ -22,7 +22,6 @@ public class ApplicationsTracker implements Runnable {
     private String outputFolderPath = "";
     private String outputAppsFilename = "";
 
-    //private List<DataCollectionStructure> collectedResults;
     private static ConcurrentLinkedDeque<DataCollectionStructure> synchronizedCollectedResults;
 
     public static volatile boolean isStopped;
@@ -88,11 +87,9 @@ public class ApplicationsTracker implements Runnable {
         ConcurrentLinkedDeque<DataCollectionStructure> result = new ConcurrentLinkedDeque<>();
 
         result.addAll(synchronizedCollectedResults);
-
         synchronizedCollectedResults.clear();
 
         return result;
-
     }
 
     public void getFocusedApplication(String scriptPath, String outputFolderPath, String outputAppsFilename)
@@ -133,12 +130,8 @@ public class ApplicationsTracker implements Runnable {
                 bufferedWriter = new BufferedWriter(new FileWriter(outputFile));
             }
 
-
-
             bufferedWriter.write(outputLine + "\r\n");
-
             bufferedWriter.close();
-
         }
         catch(Exception e)
         {
