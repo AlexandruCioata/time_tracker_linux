@@ -25,16 +25,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class MainApplication {
 
     public static String uniqueFileName ="";
-
     private static boolean isStarted = false;
-
     private AppConfig configuration = null;
-
     private IOSType OSType = null;
-
-
-    //TESTING!!
-
 
     private final static Logger logger = Logger.getLogger(MainApplication.class);
 
@@ -146,6 +139,14 @@ public class MainApplication {
         isStarted = false;
     }
 
+    //TODO:
+    public void sendDataToServer()
+    {
+        //TODO:
+        //message = getData();
+        //transmit message to server
+    }
+
     public void getData()
     {
         GlobalDataCollector globalData = null;
@@ -192,7 +193,7 @@ public class MainApplication {
 
         if(append)
         {
-            if(outputFile.exists() )
+            if(outputFile.exists())
             {
                 bufferedWriter = new BufferedWriter(new FileWriter(outputFile,true));
             }

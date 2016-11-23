@@ -1,9 +1,12 @@
+package communication;
+
+import java.io.Serializable;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
  * Created by admin on 11/23/16.
  */
-public class GlobalDataCollector {
+public class GlobalDataCollector implements Serializable{
 
     private ConcurrentLinkedDeque<DataCollectionStructure> applicationTrackerData;
     private ConcurrentLinkedDeque<DataCollectionStructure> windowTitleServiceData;
@@ -68,6 +71,11 @@ public class GlobalDataCollector {
             return new GlobalDataCollector(this);
         }
 
+    }
+
+    public byte[] getTakenScreenshotAsByteArray()
+    {
+        return takenScreenshotAsByteArray;
     }
 
     @Override
